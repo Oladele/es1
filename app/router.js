@@ -12,6 +12,10 @@ Router.map(function() {
     this.route('show', {
       path: ':company_id'
     });
+
+    this.route('edit', {
+      path: ':company_id/edit'
+    });
   });
 });
 
