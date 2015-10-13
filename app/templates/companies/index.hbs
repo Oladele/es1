@@ -3,6 +3,10 @@
 
 <ul>
 {{#each model as |company|}}
-	<li>{{company.name}}</li>
+	<li>
+		{{#link-to 'companies.show' company }}	
+			{{company.name}}
+		{{/link-to}}
+	</li>
 {{/each}}
 </ul>
