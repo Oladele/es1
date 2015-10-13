@@ -1,1 +1,8 @@
-{{outlet}}
+<h1>Companies Index</h1>
+<h2>Total companies: {{model.length}}</h2>
+
+<ul>
+{{#each model as |company|}}
+	<li>{{company.name}}</li>
+{{/each}}
+</ul>
