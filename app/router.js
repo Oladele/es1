@@ -6,7 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('companies', {});
+  this.route('companies', function(){
+  	
+  });
 });
 
 export default Router;
