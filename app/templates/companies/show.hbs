@@ -1,5 +1,10 @@
 <ul>
-	<li>Name: {{model.name}}</li> 
+	<li>
+		Name: {{model.name}}
+		{{#link-to 'companies.edit' model }}	
+			(Edit)
+		{{/link-to}}
+	</li> 
 </ul>
 
 {{link-to 'Companies List' 'companies'}}
