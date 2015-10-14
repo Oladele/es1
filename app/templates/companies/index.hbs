@@ -1,12 +1,23 @@
 <h1>Companies Index</h1>
 <h2>Total companies: {{model.length}}</h2>
 
-<ul>
-{{#each model as |company|}}
-	<li>
-		{{#link-to 'companies.show' company }}	
-			{{company.name}}
-		{{/link-to}}
-	</li>
-{{/each}}
-</ul>
+<table>
+	<thead>
+		<tr>
+			<th> Name </th>
+			<th> Delete ? </th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each model as |company|}}
+			<tr>
+				<td>{{link-to company.name "companies.show" company}}</td>
+				<td><a href="#" {{action "delete" company}}>Delete</a></td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+<h2>
+	{{link-to "Create A New Company" "companies.new"}}
+</h2>
