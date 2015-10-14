@@ -1,11 +1,15 @@
-<ul>
-	<li>
-		Name: {{model.name}}
-		{{#link-to 'companies.edit' model }}	
-			(Edit)
-		{{/link-to}}
-		<a href="#" {{action "delete" model}}>(Delete)</a>
-	</li> 
-</ul>
+<h2>Show:</h2>
 
-{{link-to 'Companies List' 'companies'}}
+<h3>
+	{{ model.name }}
+	{{#link-to 'companies.edit' model }}	
+		<span class="icon icon-edit"></span>
+	{{/link-to}}
+	<a href="#" {{action "delete" model}}>
+		<span class="icon icon-squared-cross"></span>
+	</a>
+
+</h3>
+
+
+{{link-to 'Back To Companies List' 'companies'}}
