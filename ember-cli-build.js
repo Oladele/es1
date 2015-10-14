@@ -19,8 +19,20 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  app.import('vendor/toolkit-light.css');
-  app.import('vendor/toolkit.js');
+  app.import('vendor/bootstrap_dashboard_theme/toolkit-light.css');
+  app.import('vendor/bootstrap_dashboard_theme/toolkit.js');
+  app.import('vendor/bootstrap_dashboard_theme/fonts/toolkit-entypo.ttf', {
+    destDir: 'fonts'
+  });
+  app.import('vendor/bootstrap_dashboard_theme/fonts/toolkit-entypo.eot', { 
+    destDir: 'fonts'
+  });
+  app.import('vendor/bootstrap_dashboard_theme/fonts/toolkit-entypo.woff2', {
+    destDir: 'fonts'
+  });
+  app.import('vendor/bootstrap_dashboard_theme/fonts/toolkit-entypo.woff', { 
+    destDir: 'fonts'
+  });
 
   return app.toTree();
 };
