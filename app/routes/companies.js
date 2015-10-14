@@ -11,6 +11,12 @@ export default Ember.Route.extend({
     cancel() {
       console.log('+--- cancel action in company route');
       return false;
+    },
+
+    delete: function(company){
+      company.destroyRecord().then(()=>{
+        this.transitionTo('companies.index');
+      });
     }
   }
 });
