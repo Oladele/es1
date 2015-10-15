@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import CompaniesBaseController from './base';
 
-export default Ember.Controller.extend({
+export default CompaniesBaseController.extend({
 	actions: {		
 		cancel() { 
 			this.transitionToRoute('companies.show', this.get('model'));
