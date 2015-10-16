@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
     save() {
 			if (this.get('isValid')) { 
 				this.get('model').save().then(
-					(company) => {
+					() => {
 						this.transitionToRoute('companies'); 
 					},
 					(error)=>{
