@@ -5,7 +5,7 @@
   	{{#each model as |company|}}
 
   		<li class="list-group-item">
-    		{{link-to company.name "companies.show" company}}
+    		{{link-to company.name "companies.show" company classNames="company-link"}}
     		<span class="pull-right">
     			<a href="#" {{action "delete" company}}>
 						<span class="icon icon-squared-cross"></span>

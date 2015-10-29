@@ -1,5 +1,14 @@
 export default function() {
 
+  // this.get('/companies');
+  this.get('/companies', function(db) {
+    return {
+      data: db.companies.map(attrs => (
+        {type: 'companies', id: attrs.id, attributes: attrs }
+      ))
+    };
+  });
+
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
