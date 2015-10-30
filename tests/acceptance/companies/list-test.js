@@ -12,10 +12,14 @@ module('Acceptance | companies/list', {
   }
 });
 
-test('visiting /companies/list', function(assert) {
-  visit('/companies/list');
+test('visiting /companies', function(assert) {
+  server.createList('company', 3);
+  server.create('company', {name: "ACME"});
+  visit('/companies');
 
   andThen(function() {
-    assert.equal(currentURL(), '/companies/list');
+    assert.equal(currentURL(), '/companies');
+    assert.equal(find('.company-link').length, 4, "All company links are rendered");
+    assert.equal(find('.company-link:contains("ACME")').length, 1, "List companies links contains the company name");
   });
 });
