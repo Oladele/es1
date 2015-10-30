@@ -14,10 +14,25 @@ module('Acceptance | companies/new', {
   }
 });
 
-test('visiting /companies/new', function(assert) {
-  visit('/companies/new');
+test('Can get to new company screen', function(assert) {
+  visit('/companies');
+  click('.create-company-button');
 
   andThen(function() {
     assert.equal(currentURL(), '/companies/new');
+  });
+});
+
+test('Can create new company', function(assert) {
+  visit('/companies/new');
+  fillIn('.company-name', 'New Company');
+
+  click('button[type="submit"]');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/companies');
+    assert.equal(
+      find('.company-link:contains("New Company")').length, 1,
+      "List companies links contains the new company");
   });
 });

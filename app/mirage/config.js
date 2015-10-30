@@ -9,6 +9,20 @@ export default function() {
     };
   });
 
+  this.post('/companies', function(db, request) {
+    var requestBody = JSON.parse(request.requestBody);
+    var attrs = requestBody.data.attributes;
+    var company = db.companies.insert(attrs);
+    var response = {
+      data:{
+        id: company.id,
+        type: "companies",
+        attributes: company
+      }
+    };
+    return response;
+  });
+
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
