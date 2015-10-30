@@ -23,6 +23,19 @@ export default function() {
     return response;
   });
 
+  this.get('/companies/:id', function(db, request) {
+    var id = request.params.id;
+    var company = db.companies.find(id);
+    var response = {
+      data:{
+        id: company.id,
+        type: "companies",
+        attributes: company
+      }
+    };
+    return response;
+  });
+
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
