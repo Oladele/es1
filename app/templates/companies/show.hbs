@@ -2,10 +2,10 @@
 
 <h3 class='company-details-title'>
 	{{ model.name }}
-	{{#link-to 'companies.edit' model }}	
+	{{#link-to 'companies.edit' model classNames='company-edit' }}	
 		<span class="icon icon-edit"></span>
 	{{/link-to}}
-	<a href="#" {{action "delete" model}}>
+	<a href="#" {{action "delete" model}} class='company-delete'>
 		<span class="icon icon-squared-cross"></span>
 	</a>
 
