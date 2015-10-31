@@ -43,8 +43,9 @@ test('Can click to delete from company details', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/companies');
-  });
-  assert.equal(
-      find('.company-link:contains("ACME")').length, 0,
+    assert.equal(find(
+      '.company-link:contains("ACME")').length, 
+      0,
       "List companies does not contain the deleted company");
+  });
 });
