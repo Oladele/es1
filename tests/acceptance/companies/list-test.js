@@ -23,3 +23,12 @@ test('visiting /companies', function(assert) {
     assert.equal(find('.company-link:contains("ACME")').length, 1, "List companies links contains the company name");
   });
 });
+
+test('Can click to add new company', function(assert) {
+  visit('/companies');
+  click('.create-company-button');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/companies/new');
+  });
+});

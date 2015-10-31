@@ -14,15 +14,6 @@ module('Acceptance | companies/new', {
   }
 });
 
-test('Can get to new company screen', function(assert) {
-  visit('/companies');
-  click('.create-company-button');
-
-  andThen(function() {
-    assert.equal(currentURL(), '/companies/new');
-  });
-});
-
 test('Can create new company', function(assert) {
   visit('/companies/new');
   fillIn('.company-name', 'New Company');
