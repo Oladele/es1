@@ -1,10 +1,47 @@
 export default function() {
 
+  // this.get('companies/:id/network-sites');
+  this.get('/companies/:id/network-sites', function(db, request) {
+    var id = request.params.id;
+    var networkSites = db["network-sites"].where({company: id});
+
+    return {
+      data: networkSites.map(attrs => (
+        { 
+          type: 'network-sites', 
+          id: attrs.id, 
+          attributes: attrs,
+          relationships: {
+            company: {
+              links: {
+                self: `/network-sites/${attrs.company_id}/relationships/company`,
+                related: `/network-sites/${attrs.company_id}/company`
+              }
+            }
+          }
+        }
+      ))
+    };
+  });
+
   // this.get('/companies');
   this.get('/companies', function(db) {
+
     return {
       data: db.companies.map(attrs => (
-        {type: 'companies', id: attrs.id, attributes: attrs }
+        {
+          "type": 'companies', 
+          "id": attrs.id, 
+          "attributes": attrs,
+          "relationships": {
+            "network-sites": {
+              "links": {
+                "self": `/companies/${attrs.id}/relationships/network-sites`,
+                "related": `/companies/${attrs.id}/network-sites`
+              }
+            }
+          }
+        }
       ))
     };
   });
@@ -24,6 +61,7 @@ export default function() {
   });
 
   this.get('/companies/:id', function(db, request) {
+
     var id = request.params.id;
     var company = db.companies.find(id);
     var response = {

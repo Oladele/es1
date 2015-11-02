@@ -11,6 +11,10 @@
 						<span class="icon icon-squared-cross"></span>
     			</a>
     		</span>
+
+        {{#each company.networkSites as |networkSite|}}
+        <div data-role="network-site-link"> {{ networkSite.name }} </div>
+        {{/each}}
   		</li>
 		{{/each}}
   

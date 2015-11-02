@@ -1,5 +1,15 @@
 /* jshint node: true */
 
+var contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': " 'self' ",
+    'font-src': "'self'",
+    'connect-src': "'self' http://localhost:* ",
+    'img-src': "'self'",
+    'style-src': "'self'",
+    'media-src': "'self'"
+};
+
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'noovis-app2-ember',
@@ -25,6 +35,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.contentSecurityPolicy = contentSecurityPolicy;
+
   }
 
   if (environment === 'test') {
