@@ -21,8 +21,8 @@ test('visiting /companies', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/companies');
-    assert.equal(find('.company-link').length, 4, "All company links are rendered");
-    assert.equal(find('.company-link:contains("ACME")').length, 1, "List companies links contains the company name");
+    assert.equal(find('[data-role=company-link]').length, 4, "All company links are rendered");
+    assert.equal(find('[data-role=company-link]:contains("ACME")').length, 1, "List companies links contains the company name");
     assert.equal(find('[data-role=network-site-link]:contains("ACME Lab")').length, 1, "List companies shows network sites");
   });
 });

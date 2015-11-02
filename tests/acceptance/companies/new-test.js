@@ -23,7 +23,7 @@ test('Can create new company', function(assert) {
   andThen(function() {
     assert.equal(currentURL(), '/companies');
     assert.equal(
-      find('.company-link:contains("New Company")').length, 1,
+      find('[data-role=company-link]:contains("New Company")').length, 1,
       "List companies links contains the new company");
   });
 });
