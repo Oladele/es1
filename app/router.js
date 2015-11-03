@@ -17,6 +17,12 @@ Router.map(function() {
       path: ':company_id/edit'
     });
   });
+
+  this.route('network-sites', function() {
+    this.route('show',{
+      path: ':network_site_id'
+    });
+  });
 });
 
 export default Router;

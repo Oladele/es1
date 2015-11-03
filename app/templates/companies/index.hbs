@@ -13,7 +13,9 @@
     		</span>
 
         {{#each company.networkSites as |networkSite|}}
-        <div data-role="network-site-link"> {{ networkSite.name }} </div>
+          <div>
+            {{link-to networkSite.name "network-sites.show" networkSite data-role="network-site-link"}}
+          </div>
         {{/each}}
   		</li>
 		{{/each}}

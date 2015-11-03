@@ -24,6 +24,20 @@ export default function() {
     };
   });
 
+  this.get('/network-sites/:id', function(db, request) {
+
+    var id = request.params.id;
+    var networkSite = db["network-sites"].find(id);
+    var response = {
+      data:{
+        id: networkSite.id,
+        type: "network-sites",
+        attributes: networkSite
+      }
+    };
+    return response;
+  });
+
   // this.get('/companies');
   this.get('/companies', function(db) {
 
