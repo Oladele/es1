@@ -4,20 +4,25 @@
   	
   	{{#each model as |company|}}
 
-  		<li class="list-group-item">
-    		{{link-to company.name "companies.show" company data-role="company-link"}}
-    		<span class="pull-right">
-    			<a href="#" {{action "delete" company}}>
-						<span class="icon icon-squared-cross"></span>
-    			</a>
-    		</span>
+  		<div class="panel panel-default">
+        <div class="panel-heading">
+      		{{link-to company.name "companies.show" company data-role="company-link"}}
+      		<span class="pull-right">
+      			<a href="#" {{action "delete" company}}>
+  						<span class="icon icon-squared-cross"></span>
+      			</a>
+      		</span>
+        </div>
+        
+        <ul class="list-group">
+          {{#each company.networkSites as |networkSite|}}
+            <li class="list-group-item">
+              {{link-to networkSite.name "network-sites.show" networkSite data-role="network-site-link"}}
+            </li>
+          {{/each}}          
+        </ul>
 
-        {{#each company.networkSites as |networkSite|}}
-          <div>
-            {{link-to networkSite.name "network-sites.show" networkSite data-role="network-site-link"}}
-          </div>
-        {{/each}}
-  		</li>
+  		</div>
 		{{/each}}
   
 </div>
