@@ -4,7 +4,7 @@ var contentSecurityPolicy = {
     'default-src': "'none'",
     'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",
     'font-src': "'self' fonts.gstatic.com",
-    'connect-src': "'self' maps.gstatic.com",
+    'connect-src': "'self' http://localhost:* maps.gstatic.com http://noovis2-staging.herokuapp.com",
     'img-src': "'self' data: *.googleapis.com maps.gstatic.com csi.gstatic.com",
     'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
 };
