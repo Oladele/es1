@@ -1,11 +1,11 @@
 <h2>List: {{model.length}}</h2>
-  {{ g-map canvasClassName="map-companies-list" 
+  {{!-- {{ g-map canvasClassName="map-companies-list" 
     googleParams='{
       "zoom": 3, 
       "zoomControl":false,
       "streetViewControl": false
     }'
-  }}
+  }} --}}
 
 	{{#each model as |company|}}
 
@@ -20,7 +20,7 @@
       </div>
       
       <div class="list-group">
-        {{#each company.networkSites as |networkSite|}}
+        {{#each company.storedNetworkSites as |networkSite|}}
           <div class="list-group-item">
             {{link-to networkSite.name "network-sites.show" networkSite data-role="network-site-link"}}
           </div>
