@@ -41,22 +41,49 @@ export default function() {
   // this.get('/companies');
   this.get('/companies', function(db) {
 
-    return {
-      data: db.companies.map(attrs => (
-        {
-          "type": 'companies', 
-          "id": attrs.id, 
-          "attributes": attrs,
-          "relationships": {
-            "network-sites": {
-              "links": {
-                "self": `/companies/${attrs.id}/relationships/network-sites`,
-                "related": `/companies/${attrs.id}/network-sites`
-              }
+    var data = db.companies.map(attrs => (
+      {
+        "type": 'companies', 
+        "id": attrs.id, 
+        "attributes": attrs,
+        "relationships": {
+          "network-sites": {
+            "links": {
+              "self": `/companies/${attrs.id}/relationships/network-sites`,
+              "related": `/companies/${attrs.id}/network-sites`
+            },
+            "data": db["network-sites"].where({company: attrs.id}).map(attrs =>(
+                {
+                  "type": "network-sites",
+                  "id": attrs.id
+                }
+              ))
+          }
+        }
+      }
+    ));
+
+    var included = db["network-sites"].map(attrs =>(
+      {
+        "id": attrs.id,
+        "type": "network-sites",
+        "attributes": attrs,
+        "relationships": {
+          "company": {
+            "links": {
+              "self": `/network-sites/${attrs.id}/relationships/company`,
+              "related": `/network-sites/${attrs.id}/company`
             }
           }
         }
-      ))
+      }
+    ));
+
+    window.tempData = data;
+
+    return {
+      data: data,
+      included: included
     };
   });
 

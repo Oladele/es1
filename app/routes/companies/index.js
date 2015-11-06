@@ -15,9 +15,9 @@ export default Ember.Route.extend({
 					// return ns.get('company').get("id") == company.id;
 					return company.get('networkSites').indexOf(ns) >= 0;
 				});
-			})
-			return companies
-		})
+			});
+			return companies;
+		});
 
 		return response;
 
