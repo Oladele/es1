@@ -115,7 +115,16 @@ export default function() {
     return response;
   });
 
-  this.del('/companies/:id');
+  // this.del('/companies/:id');
+  this.del('/companies/:id', function(db, request) {
+    var id = request.params.id;
+    db.contacts.remove(id);
+
+    // fix for mirage test error:
+    // Assertion Failed: normalizeResponse must return a valid JSON API document
+    // One or more of the following keys must be present: "data", "errors", "meta".
+    return { "meta": {"deleted":"deleted"}};
+  });
 
   // These comments are here to help you get started. Feel free to delete them.
 
