@@ -6,6 +6,7 @@
       "streetViewControl": false
     }'
   }} --}}
+  {{ g-map-address-input }}
 
 	{{#each model as |company|}}
 
@@ -20,7 +21,7 @@
       </div>
       
       <div class="list-group">
-        {{#each company.storedNetworkSites as |networkSite|}}
+        {{#each company.networkSites as |networkSite|}}
           <div class="list-group-item">
             {{link-to networkSite.name "network-sites.show" networkSite data-role="network-site-link"}}
           </div>
