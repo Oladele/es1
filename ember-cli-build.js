@@ -21,6 +21,7 @@ module.exports = function(defaults) {
 
   app.import('vendor/bootstrap_dashboard_theme/toolkit-light.css');
   app.import('vendor/bootstrap_dashboard_theme/toolkit.js');
+  app.import('vendor/bootstrap_dashboard_theme/chart.js');
   app.import('vendor/bootstrap_dashboard_theme/fonts/toolkit-entypo.ttf', {
     destDir: 'fonts'
   });

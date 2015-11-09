@@ -1,3 +1,19 @@
+/*
+BEGIN Wrapper Code By Ola Adedoyin
+Logs when code is LOADED using app.import in "ember-cli-build.js"
+Wraps lib code in function attached to global object
+So that the code can be called when needed
+Such as in components' and views' didInsertElement hooks
+*/
+
+console.log("LOADED vendor/bootstrap_dashboard_theme/toolkit.js");
+window.globalToolkitJS = function() {
+  console.log("EXECUTED vendor/bootstrap_dashboard_theme/toolkit.js")
+
+  // Actual library code begins below. 
+  // Look for end of wrapper code all the way at the end of this file
+
+
 /* ========================================================================
  * Bootstrap: transition.js v3.3.5
  * http://getbootstrap.com/javascript/#transitions
@@ -4275,3 +4291,10 @@ $(function () {
 	});
 
 }(window.jQuery));
+
+// Actual library code ends just before this
+} 
+
+/*
+END (Below) Wrapper Code By Ola Adedoyin
+*/
