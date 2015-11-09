@@ -24,6 +24,10 @@ Router.map(function() {
     });
   });
   this.route('building');
+
+  this.route('buildings', function() {
+    this.route('show');
+  });
 });
 
 export default Router;
