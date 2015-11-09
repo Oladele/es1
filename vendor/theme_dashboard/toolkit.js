@@ -6,9 +6,9 @@ So that the code can be called when needed
 Such as in components' and views' didInsertElement hooks
 */
 
-console.log("LOADED vendor/bootstrap_dashboard_theme/toolkit.js");
-window.globalToolkitJS = function() {
-  console.log("EXECUTED vendor/bootstrap_dashboard_theme/toolkit.js")
+console.log("LOADED vendor/theme_dashboard/toolkit.js");
+window.globalVendorThemeDashboardToolkit = function() {
+  console.log("EXECUTED vendor/theme_dashboard/toolkit.js")
 
   // Actual library code begins below. 
   // Look for end of wrapper code all the way at the end of this file

@@ -1,10 +1,10 @@
-/* global globalToolkitJS*/
+/* global globalVendorThemeDashboardToolkit*/
 import Ember from 'ember';
 
 export default Ember.Component.extend({
 
 	didInsertElement: function(){
-		 globalToolkitJS();
+		 globalVendorThemeDashboardToolkit();
 	}
 
 });

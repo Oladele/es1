@@ -2,7 +2,7 @@
 Heading Code By Ola Adedoyin
 Logs when code is LOADED using app.import in "ember-cli-build.js"
 */
-console.log("LOADED vendor/bootstrap_dashboard_theme/chart.js");
+console.log("LOADED vendor/theme_dashboard/chart.js");
 
 
 /*!
