@@ -20,8 +20,10 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   app.import('vendor/theme_dashboard/toolkit-light.css');
-  app.import('vendor/theme_dashboard/toolkit.js');
   app.import('vendor/theme_dashboard/chart.js');
+  app.import('vendor/theme_dashboard/toolkit.js');
+  app.import('vendor/theme_dashboard/tablesorter.min.js');
+  app.import('vendor/theme_dashboard/application.js');
   app.import('vendor/theme_dashboard/fonts/toolkit-entypo.ttf', {
     destDir: 'fonts'
   });
