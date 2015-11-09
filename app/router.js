@@ -23,6 +23,7 @@ Router.map(function() {
       path: ':network_site_id'
     });
   });
+  this.route('building');
 });
 
 export default Router;
