@@ -27,8 +27,8 @@ export default function( server ) {
     });
 
       // ------>Building
-      server.create('network-site', {
-        "network-site": charlestown.id,
+      server.create('building', {
+        networkSite: charlestown.id,
         name: "Arborside",
         lat: 39.2690564001304, lng: -76.7021008550728
       });

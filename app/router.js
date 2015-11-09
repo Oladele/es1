@@ -25,7 +25,9 @@ Router.map(function() {
   });
 
   this.route('buildings', function() {
-    this.route('show');
+    this.route('show',{
+      path: ':building_id'
+    });
   });
 });
 

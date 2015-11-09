@@ -1,5 +1,19 @@
 export default function() {
 
+  this.get('/buildings/:id', function(db, request) {
+
+    var id = request.params.id;
+    var building = db["buildings"].find(id);
+    var response = {
+      data:{
+        id: building.id,
+        type: "buildings",
+        attributes: building
+      }
+    };
+    return response;
+  });
+
   // this.get('companies/:id/network-sites');
   this.get('/companies/:id/network-sites', function(db, request) {
     var id = request.params.id;
