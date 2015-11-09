@@ -23,7 +23,6 @@ Router.map(function() {
       path: ':network_site_id'
     });
   });
-  this.route('building');
 
   this.route('buildings', function() {
     this.route('show');
