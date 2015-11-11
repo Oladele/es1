@@ -4,55 +4,51 @@
       <div class="col-sm-6 col-md-3 m-b">
         <div class="statcard">
           <div class="p-a">
-            <span class="statcard-desc">Page views</span>
+            <span class="statcard-desc">Companies</span>
             <h2 class="statcard-number">
-              12,938
-              <small class="label label-success">5%</small>
+              2
+              {{!-- <small class="label label-success">5%</small> --}}
             </h2>
           </div>
-          <canvas id="sparkline1" width="424" height="107" class="sparkline" data-chart="spark-line" data-value="[{strokeColor: '#1ca8dd', fillColor:'rgba(28,168,221,.03)', data:[28,68,41,43,96,45,100]}]" data-labels="['a', 'b','c','d','e','f','g']" style="width: 424px; height: 107px;"></canvas>
         </div>
       </div>
       <div class="col-sm-6 col-md-3 m-b">
         <div class="statcard">
           <div class="p-a">
-            <span class="statcard-desc">Downloads</span>
+            <span class="statcard-desc">Network Sites</span>
+            <h2 class="statcard-number">
+              11
+              {{!-- <small class="label label-danger">1.3%</small> --}}
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 m-b">
+        <div class="statcard">
+          <div class="p-a">
+            <span class="statcard-desc">Buildings</span>
+            <h2 class="statcard-number">
+              24
+              {{!-- <small class="label label-success">6.75%</small> --}}
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 m-b">
+        <div class="statcard">
+          <div class="p-a">
+            <span class="statcard-desc">ONTs</span>
             <h2 class="statcard-number">
               758
-              <small class="label label-danger">1.3%</small>
+              {{!-- <small class="label label-success">1.3%</small> --}}
             </h2>
           </div>
-          <canvas id="sparkline1" width="424" height="107" class="sparkline" data-chart="spark-line" data-value="[{strokeColor: '#1ca8dd', fillColor:'rgba(28,168,221,.03)', data:[4,34,64,27,96,50,80]}]" data-labels="['a', 'b','c','d','e','f','g']" style="width: 424px; height: 107px;"></canvas>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 m-b">
-        <div class="statcard">
-          <div class="p-a">
-            <span class="statcard-desc">Sign-ups</span>
-            <h2 class="statcard-number">
-              1,293
-              <small class="label label-success">6.75%</small>
-            </h2>
-          </div>
-          <canvas id="sparkline1" width="424" height="107" class="sparkline" data-chart="spark-line" data-value="[{strokeColor: '#1ca8dd', fillColor:'rgba(28,168,221,.03)', data:[12,38,32,60,36,54,68]}]" data-labels="['a', 'b','c','d','e','f','g']" style="width: 424px; height: 107px;"></canvas>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 m-b">
-        <div class="statcard">
-          <div class="p-a">
-            <span class="statcard-desc">Downloads</span>
-            <h2 class="statcard-number">
-              758
-              <small class="label label-success">1.3%</small>
-            </h2>
-          </div>
-          <canvas id="sparkline1" width="424" height="107" class="sparkline" data-chart="spark-line" data-value="[{strokeColor: '#1ca8dd', fillColor:'rgba(28,168,221,.03)', data:[43,48,52,58,50,95,100]}]" data-labels="['a', 'b','c','d','e','f','g']" style="width: 424px; height: 107px;"></canvas>
         </div>
       </div>
     </div>
   {{#g-map canvasClassName="map-companies-list" 
     googleParams='{
-      "zoom": 3, 
+      "zoom": 5, 
       "zoomControl":false,
       "streetViewControl": false
     }' as |context| 
