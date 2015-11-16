@@ -76,7 +76,11 @@
           <div class="list-group-item">
             {{link-to networkSite.name "network-sites.show" networkSite data-role="network-site-link"}}
           </div>
-        {{/each}}          
+        {{/each}}
+        {{!-- Create New Newtork Sites --}}
+        <div class="list-group-item">
+          {{link-to "Create A New Site" "network-sites.new" (query-params company=company.id) classNames='btn btn-primary btn-sm create-networkSite-button' }}
+        </div>        
       </div>
 
 		</div>
