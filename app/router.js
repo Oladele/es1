@@ -22,6 +22,7 @@ Router.map(function() {
     this.route('show',{
       path: ':network_site_id'
     });
+    this.route('new');
   });
 
   this.route('buildings', function() {
