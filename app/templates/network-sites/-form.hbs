@@ -1,0 +1,10 @@
+<form {{action "save" on="submit"}}>
+	<h2>{{errorMessage}}</h2>
+
+	<div class="form-group">
+	  {{input value=model.name classNames='form-control network-site-name' placeholder='Site Name'}}
+	</div>
+
+	<button type="submit" class="btn btn-primary">Submit</button>
+	<button {{action "cancel"}} class="btn btn-default">Cancel</button>
+</form>
