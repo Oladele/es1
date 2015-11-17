@@ -25,3 +25,21 @@ test('visiting /network-sites/new', function(assert) {
       "New network-site contains name of company");
   });
 });
+
+test('Can create new network-site', function(assert) {
+  var company = server.create('company', {name: "ACME"});
+  var companyId = company.id; 
+  visit('/network-sites/new?companyId='+companyId);
+
+  fillIn('.network-site-name', 'New Site');
+
+  click('button[type="submit"]');
+
+  andThen(function() {
+    // pauseTest();
+    assert.equal(currentURL(), '/companies');
+    assert.equal(
+      find('[data-role=network-site-link]:contains("New Site")').length, 1,
+      "List companies links contains the new network-site");
+  });
+});

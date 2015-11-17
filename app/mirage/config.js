@@ -38,6 +38,25 @@ export default function() {
     };
   });
 
+  this.post('/network-sites', function(db, request) {
+    var requestBody = JSON.parse(request.requestBody);
+    var attrs = requestBody.data.attributes;
+    var rels = requestBody.data.relationships;
+    var companyId = rels.company.data.id;
+
+    attrs.company = companyId;
+    var networkSite = db["network-sites"].insert(attrs);
+
+    var response = {
+      data:{
+        id: networkSite.id,
+        type: "network-sites",
+        attributes: networkSite
+      }
+    };
+    return response;
+  });
+
   this.get('/network-sites/:id', function(db, request) {
 
     var id = request.params.id;
