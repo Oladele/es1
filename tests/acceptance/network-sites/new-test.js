@@ -13,9 +13,15 @@ module('Acceptance | network sites/new', {
 });
 
 test('visiting /network-sites/new', function(assert) {
-  visit('/network-sites/new');
+  var company = server.create('company', {name: "ACME"});
+  var companyId = company.id;
+
+  visit('/network-sites/new?companyId='+companyId);
 
   andThen(function() {
-    assert.equal(currentURL(), '/network-sites/new');
+    assert.equal(currentURL(), '/network-sites/new?companyId='+companyId);
+    assert.equal(
+      find('[data-role=company-name]:contains("ACME")').length, 1,
+      "New network-site contains name of company");
   });
 });
