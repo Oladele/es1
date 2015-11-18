@@ -41,9 +41,8 @@ export default Ember.Controller.extend({
 		},
 		
 		cancel() { 
-			// this.transitionToRoute('companies');
-			// return false; 
-			return true; 
+			this.transitionToRoute('companies');
+			return false; 
 		}
   }
 });
