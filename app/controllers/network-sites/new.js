@@ -17,6 +17,11 @@ export default Ember.Controller.extend({
 	),
 
 	actions: {
+
+		updateLocation: function(location) { 
+			this.get('model').set('lat', location.latLng.lat);
+			this.get('model').set('lng', location.latLng.lng);
+		},
     
     save() {
 			if (this.get('isValid')) { 
