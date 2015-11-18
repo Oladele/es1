@@ -1,10 +1,10 @@
 
 
 <div class="row statcards">
-  {{ stat-card title='Companies' value=2 cssSizes='col-sm-6 col-md-3'}}
-  {{ stat-card title='Network Sites' value=11 cssSizes='col-sm-6 col-md-3'}}
-  {{ stat-card title='Buildings' value=24 cssSizes='col-sm-6 col-md-3'}}
-  {{ stat-card title='ONTs' value=234 cssSizes='col-sm-6 col-md-3'}}
+  {{ stat-card title='Companies' value=companiesCount cssSizes='col-sm-6 col-md-3'}}
+  {{ stat-card title='Network Sites' value=networkSitesCount cssSizes='col-sm-6 col-md-3'}}
+  {{ stat-card title='Buildings' value=99 cssSizes='col-sm-6 col-md-3'}}
+  {{ stat-card title='ONTs' value=999 cssSizes='col-sm-6 col-md-3'}}
 </div>
 
 {{#g-map canvasClassName="map-companies-list" 
@@ -14,14 +14,14 @@
     "streetViewControl": false
   }' as |context| 
 }}
-  {{#each model as |company|}}
+  {{#each companies as |company|}}
     {{#each company.networkSites as |site|}}
       {{g-map-marker mapContext=context lat=site.lat lng=site.lng }}
     {{/each}}
   {{/each}}
 {{/g-map}}
 
-	{{#each model as |company|}}
+	{{#each companies as |company|}}
 
 		<div class="panel panel-default">
       <div class="panel-heading">
