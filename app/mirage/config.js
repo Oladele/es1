@@ -1,5 +1,28 @@
 export default function() {
 
+  this.get('/network-sites', function(db) {
+
+    var data = db['network-sites'].map(attrs => (
+      {
+        "type": 'network-sites', 
+        "id": attrs.id, 
+        "attributes": attrs,
+        "relationships": {
+          "company": {
+            "links": {
+              "self": `/network-sites/${attrs.id}/relationships/company`,
+              "related": `/network-sites/${attrs.id}/company`
+            }
+          }
+        }
+      }
+    ));
+
+    return {
+      data: data,
+    };
+  });
+
   this.get('/buildings/:id', function(db, request) {
 
     var id = request.params.id;
