@@ -1,64 +1,25 @@
 
 
 <div class="row statcards">
-      <div class="col-sm-6 col-md-3 m-b">
-        <div class="statcard">
-          <div class="p-a">
-            <span class="statcard-desc">Companies</span>
-            <h2 class="statcard-number">
-              2
-              {{!-- <small class="label label-success">5%</small> --}}
-            </h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 m-b">
-        <div class="statcard">
-          <div class="p-a">
-            <span class="statcard-desc">Network Sites</span>
-            <h2 class="statcard-number">
-              11
-              {{!-- <small class="label label-danger">1.3%</small> --}}
-            </h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 m-b">
-        <div class="statcard">
-          <div class="p-a">
-            <span class="statcard-desc">Buildings</span>
-            <h2 class="statcard-number">
-              24
-              {{!-- <small class="label label-success">6.75%</small> --}}
-            </h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 m-b">
-        <div class="statcard">
-          <div class="p-a">
-            <span class="statcard-desc">ONTs</span>
-            <h2 class="statcard-number">
-              758
-              {{!-- <small class="label label-success">1.3%</small> --}}
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  {{#g-map canvasClassName="map-companies-list" 
-    googleParams='{
-      "zoom": 5, 
-      "zoomControl":false,
-      "streetViewControl": false
-    }' as |context| 
-  }}
-    {{#each model as |company|}}
-      {{#each company.networkSites as |site|}}
-        {{g-map-marker mapContext=context lat=site.lat lng=site.lng }}
-      {{/each}}
+  {{ stat-card title='Companies' value=2 cssSizes='col-sm-6 col-md-3'}}
+  {{ stat-card title='Network Sites' value=11 cssSizes='col-sm-6 col-md-3'}}
+  {{ stat-card title='Buildings' value=24 cssSizes='col-sm-6 col-md-3'}}
+  {{ stat-card title='ONTs' value=234 cssSizes='col-sm-6 col-md-3'}}
+</div>
+
+{{#g-map canvasClassName="map-companies-list" 
+  googleParams='{
+    "zoom": 5, 
+    "zoomControl":false,
+    "streetViewControl": false
+  }' as |context| 
+}}
+  {{#each model as |company|}}
+    {{#each company.networkSites as |site|}}
+      {{g-map-marker mapContext=context lat=site.lat lng=site.lng }}
     {{/each}}
-  {{/g-map}}
+  {{/each}}
+{{/g-map}}
 
 	{{#each model as |company|}}
 
