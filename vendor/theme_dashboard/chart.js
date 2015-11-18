@@ -4,6 +4,7 @@ Logs when code is LOADED using app.import in "ember-cli-build.js"
 */
 console.log("LOADED vendor/theme_dashboard/chart.js");
 
+console.log("EXECUTED vendor/theme_dashboard/chart.js");
 
 /*!
  * Chart.js

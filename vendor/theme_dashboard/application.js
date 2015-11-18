@@ -7,6 +7,7 @@ Such as in components' and views' didInsertElement hooks
 */
 
 console.log("LOADED vendor/theme_dashboard/application.js");
+
 window.globalVendorThemeDashboardApplication = function() {
   console.log("EXECUTED vendor/theme_dashboard/application.js")
 
